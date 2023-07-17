@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Vite App</title>
+    <style>
+      /* 스타일 적용도 해야 함 */
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h3 v-cloak>{{ message }}</h3>
+    </div>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            message: '안녕하세요 👋🏻',
+          };
+        },
+      };
+
+      /**
+       * 컴포넌트 인스턴스가 3초 후에 생성되기 때문에
+       * 첫 화면에 {{ message }} 로 뜨다가 2초 뒤에 안녕하세요 👋🏻 라고 뜸
+       * 이럴 때 사용하는 게 v-cloak!
+       */
+      setTimeout(() => {
+        Vue.createApp(App).mount('#app');
+      }, 2000);
+    </script>
+  </body>
+</html>
