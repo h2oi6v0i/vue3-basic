@@ -27,7 +27,7 @@ export default {
     },
     contents: {
       type: String,
-      required: true,
+      // required: true,
     },
     isLike: {
       type: Boolean,
@@ -51,7 +51,7 @@ export default {
   setup(props, context) {
     /** 카드 타입 */
     const typeName = computed(() => {
-      return props.type === 'news' ? 'News' : 'Notice';
+      return props.type === 'news' ? '뉴스' : '공지사항';
     });
 
     /** 좋아요 상태별 클래스 */
