@@ -1,9 +1,9 @@
 <template>
-  <label>
+  <!-- 다중 루트 노드를 사용할 때는 어디에 상속을 할지 명시적으로 지정해야 함 -->
+  <label class="form-label" id="child-id">
     {{ label }}
-    <!-- <input :value="modelValue" @input="(event) => $emit('update:modelValue', event.target.value)" type="text"/> -->
-    <input v-model="value" type="text" />
   </label>
+  <input v-model="value" type="text" v-bind="$attrs" class="form-control" />
 </template>
 
 <script>
